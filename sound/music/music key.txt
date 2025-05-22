@@ -1,0 +1,8 @@
+menu -- jurrasic park bgm4
+gameplay -- dkc kremlantis
+
+victory jingle -- kirby 31 bonus win
+victory music -- jurrasic park bgm5
+
+losing jingle -- kirby 12 game over
+losing music -- kirby 32 game over

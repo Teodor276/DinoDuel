@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvarxo30k5ff3"]
+
+[ext_resource type="Script" path="res://scenes/dino_in_game_animations/dino_in_game_animations.gd" id="1_qyhxn"]
+[ext_resource type="SpriteFrames" uid="uid://b0fc2l02kuule" path="res://scenes/dino_in_game_animations/DinoMoveFrames.tres" id="2_c58sc"]
+
+[node name="DinoInGameAnimations" type="Node2D"]
+script = ExtResource("1_qyhxn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_c58sc")
+animation = &"kuro_hurt"
+frame_progress = 0.104821

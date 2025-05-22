@@ -1,0 +1,276 @@
+[gd_scene load_steps=27 format=3 uid="uid://diyc3w48nwbqj"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/help.gd" id="1_5fp1b"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="2_dpw1f"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="3_gc3vs"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="4_ba1s3"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="5_2nihh"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="5_162xf"]
+[ext_resource type="Texture2D" uid="uid://dujljn4s586jk" path="res://assets/dinosaurs/male/kuro/base/idle.png" id="7_n7neb"]
+[ext_resource type="Texture2D" uid="uid://cb5c1nqyvfqyy" path="res://assets/dinosaurs/female/mort/base/idle.png" id="7_wt8tc"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="8_d2ns8"]
+[ext_resource type="Texture2D" uid="uid://5rfujtg18b2a" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_Reverse_01a.png" id="9_428b0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0hw0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gioh6"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("2_dpw1f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53nri"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_gc3vs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8y18g"]
+content_margin_bottom = 30.0
+texture = ExtResource("4_ba1s3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7su3"]
+content_margin_left = 175.0
+content_margin_top = 175.0
+content_margin_right = 100.0
+content_margin_bottom = 100.0
+texture = ExtResource("5_2nihh")
+
+[sub_resource type="GDScript" id="GDScript_4l46f"]
+script/source = "extends Panel
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+	
+
+func show_instructions() -> void:
+	self.visible = true
+
+func hide_instructions() -> void:
+	self.visible = false
+	
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfl8b"]
+content_margin_bottom = 30.0
+texture = ExtResource("4_ba1s3")
+modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7h68"]
+content_margin_bottom = 30.0
+texture = ExtResource("4_ba1s3")
+modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knuj2"]
+atlas = ExtResource("7_wt8tc")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m00e"]
+atlas = ExtResource("7_wt8tc")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1b0m"]
+atlas = ExtResource("7_wt8tc")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kflru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knuj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m00e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1b0m")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd8fj"]
+atlas = ExtResource("7_n7neb")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8exp"]
+atlas = ExtResource("7_n7neb")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yljtr"]
+atlas = ExtResource("7_n7neb")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aetta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8exp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yljtr")
+}],
+"loop": true,
+"name": &"kuro",
+"speed": 5.0
+}]
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5fp1b")
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_u0hw0")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_gioh6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_53nri")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8y18g")
+icon = ExtResource("5_162xf")
+icon_alignment = 1
+expand_icon = true
+
+[node name="InstructionsPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1250, 725)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -625.0
+offset_top = -362.5
+offset_right = 625.0
+offset_bottom = 476.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h7su3")
+script = SubResource("GDScript_4l46f")
+
+[node name="SwipeLeft" type="Button" parent="InstructionsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -62.5
+offset_right = 107.0
+offset_bottom = 62.5
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mfl8b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gioh6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_53nri")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8y18g")
+disabled = true
+icon = ExtResource("5_162xf")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SwipeRight" type="Button" parent="InstructionsPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -62.5
+offset_right = 18.0
+offset_bottom = 62.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p7h68")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gioh6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_53nri")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8y18g")
+icon = ExtResource("9_428b0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Mort" type="AnimatedSprite2D" parent="InstructionsPanel"]
+position = Vector2(144.44, 188.643)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_kflru")
+animation = &"mort"
+autoplay = "mort"
+offset = Vector2(37, 15)
+
+[node name="Kuro" type="AnimatedSprite2D" parent="InstructionsPanel"]
+position = Vector2(144.44, 188.643)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_aetta")
+animation = &"kuro"
+autoplay = "kuro"
+offset = Vector2(70, 15)
+flip_h = true
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="InstructionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -245.5
+offset_right = 316.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+autoplay = true
+expand = true
+loop = true
+
+[node name="InstructionsLabel" type="RichTextLabel" parent="InstructionsPanel"]
+custom_minimum_size = Vector2(925, 100)
+layout_mode = 2
+offset_left = 179.0
+offset_top = 542.5
+offset_right = 1104.0
+offset_bottom = 692.5
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("8_d2ns8")
+theme_override_font_sizes/normal_font_size = 42
+text = "Welcome to Dino Duel! A hostile herd of dinos is trying to take over your prehistoric pasture. Save your herd by reclaiming your rightful territory!"
+
+[node name="InstructionsContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 510.0
+offset_top = 352.5
+offset_right = 1485.0
+offset_bottom = 916.5
+alignment = 1
+
+[connection signal="mouse_entered" from="back button" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_back_button_mouse_entered"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="InstructionsPanel/SwipeLeft" to="." method="_on_swipe_left_mouse_entered"]
+[connection signal="pressed" from="InstructionsPanel/SwipeLeft" to="." method="_on_swipe_left_pressed"]
+[connection signal="mouse_entered" from="InstructionsPanel/SwipeRight" to="." method="_on_swipe_right_mouse_entered"]
+[connection signal="pressed" from="InstructionsPanel/SwipeRight" to="." method="_on_swipe_right_pressed"]

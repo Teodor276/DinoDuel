@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://lb55lgac0boe"]
+
+[ext_resource type="Texture2D" uid="uid://b8og5hmo5eoq4" path="res://tile_pics/pale_128x128.png" id="1_1wilr"]
+[ext_resource type="Texture2D" uid="uid://bqvesh0yi0qk8" path="res://tile_pics/greeen_128x128.png" id="2_iibq7"]
+[ext_resource type="Texture2D" uid="uid://c85mdoxw8q38l" path="res://tile_pics/black_128x128.png" id="3_ogmx4"]
+[ext_resource type="Texture2D" uid="uid://7fkhmpeyvhd6" path="res://tile_pics/ai_move_128x128.png" id="4_76mks"]
+[ext_resource type="Texture2D" uid="uid://drrw2cdbn05he" path="res://tile_pics/human_move_128x128.png" id="5_nvfme"]
+[ext_resource type="Script" path="res://scenes/ai_vs_ai_over_networking/ai_vs_ai_over_networking.gd" id="6_k8pw6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhrbj"]
+texture = ExtResource("1_1wilr")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3jdl"]
+texture = ExtResource("2_iibq7")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xlmt"]
+texture = ExtResource("3_ogmx4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62pp4"]
+texture = ExtResource("4_76mks")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hg8si"]
+texture = ExtResource("5_nvfme")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s0fei"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(65, 65)
+sources/0 = SubResource("TileSetAtlasSource_jhrbj")
+sources/1 = SubResource("TileSetAtlasSource_t3jdl")
+sources/2 = SubResource("TileSetAtlasSource_6xlmt")
+sources/3 = SubResource("TileSetAtlasSource_62pp4")
+sources/4 = SubResource("TileSetAtlasSource_hg8si")
+
+[node name="Main" type="Node2D"]
+
+[node name="HexGrid" type="TileMap" parent="."]
+position = Vector2(881, 414)
+tile_set = SubResource("TileSet_s0fei")
+rendering_quadrant_size = 17
+format = 2
+script = ExtResource("6_k8pw6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="CanvasLayer/Background"]
+layout_mode = 0
+offset_left = 1855.0
+offset_top = 25.0
+offset_right = 1905.0
+offset_bottom = 75.0
+text = "Quit
+
+"
+
+[connection signal="pressed" from="CanvasLayer/Background/Back" to="HexGrid" method="_on_back_pressed"]

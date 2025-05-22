@@ -1,0 +1,129 @@
+[gd_scene load_steps=22 format=3 uid="uid://pc3nqe0olyma"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/menu_global_manager.gd" id="1_6meif"]
+[ext_resource type="Script" path="res://scenes/start_menu/background.gd" id="2_mccqc"]
+[ext_resource type="Texture2D" uid="uid://btwi5dm8tsaxm" path="res://assets/ui/background/DAY - SKY.png" id="2_w8h4v"]
+[ext_resource type="Texture2D" uid="uid://boplqvm6b006h" path="res://assets/ui/background/BACKGROUND SUMMER DAY 5.png" id="3_44a83"]
+[ext_resource type="Texture2D" uid="uid://cklal6lobjiad" path="res://assets/ui/background/BACKGROUND SUMMER DAY 4.png" id="4_6vie0"]
+[ext_resource type="Texture2D" uid="uid://cgkapspvboh3e" path="res://assets/ui/background/BACKGROUND SUMMER DAY 3.png" id="5_4ngnr"]
+[ext_resource type="Texture2D" uid="uid://s6g13vqr4lsf" path="res://assets/ui/background/BACKGROUND SUMMER DAY 2.png" id="6_8dh3r"]
+[ext_resource type="Texture2D" uid="uid://ck87ik8nch46v" path="res://assets/ui/background/BACKGROUND SUMMER DAY 1.png" id="7_7c62j"]
+[ext_resource type="PackedScene" uid="uid://b7t4bj27c8b68" path="res://scenes/start_menu/start_menu.tscn" id="9_716hu"]
+[ext_resource type="PackedScene" uid="uid://b2hqqgawsr5xj" path="res://scenes/start_menu/ai_choice.tscn" id="10_ssjr3"]
+[ext_resource type="PackedScene" uid="uid://dq2rorep7x7xe" path="res://scenes/start_menu/game_type.tscn" id="11_imroq"]
+[ext_resource type="PackedScene" uid="uid://diyc3w48nwbqj" path="res://scenes/start_menu/help.tscn" id="12_joah0"]
+[ext_resource type="PackedScene" uid="uid://chneh5a2axl62" path="res://scenes/start_menu/settings.tscn" id="13_pwelt"]
+[ext_resource type="AudioStream" uid="uid://5liibacoh42x" path="res://sound/music/04 BGM #04.mp3" id="18_hls12"]
+[ext_resource type="AudioStream" uid="uid://dlc8g63x0jwiw" path="res://sound/hover.wav" id="19_k25x3"]
+[ext_resource type="AudioStream" uid="uid://b73r3ptsvk3s4" path="res://sound/select5.wav" id="20_mf5u1"]
+[ext_resource type="PackedScene" uid="uid://doa7qsc4olnyf" path="res://scenes/start_menu/play_game/play_game_local.tscn" id="25_ikb5t"]
+[ext_resource type="PackedScene" uid="uid://wwofkrc123pt" path="res://scenes/start_menu/play_game/play_game_ai.tscn" id="26_rng7e"]
+[ext_resource type="PackedScene" uid="uid://6dy02mwnkdky" path="res://scenes/start_menu/play_game/play_game_online.tscn" id="27_anv2f"]
+
+[sub_resource type="Gradient" id="Gradient_h1oh5"]
+colors = PackedColorArray(0.133333, 0.615686, 0.94902, 1, 0.133333, 0.615686, 0.94902, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wcmev"]
+gradient = SubResource("Gradient_h1oh5")
+
+[node name="Menu Global Manager" type="Node"]
+script = ExtResource("1_6meif")
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mccqc")
+
+[node name="Sprite2D6" type="Sprite2D" parent="background"]
+position = Vector2(0, 1080)
+rotation = 4.71239
+scale = Vector2(16.9091, 30.0068)
+texture = SubResource("GradientTexture2D_wcmev")
+centered = false
+
+[node name="background" type="Sprite2D" parent="background"]
+position = Vector2(0, 80)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("2_w8h4v")
+centered = false
+
+[node name="background2" type="Sprite2D" parent="background"]
+position = Vector2(1920, 80)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("2_w8h4v")
+centered = false
+
+[node name="cloud" type="Sprite2D" parent="background"]
+rotation = 6.28319
+scale = Vector2(6, 6)
+texture = ExtResource("3_44a83")
+centered = false
+offset = Vector2(0, 20)
+
+[node name="Sprite2D4" type="Sprite2D" parent="background"]
+scale = Vector2(6, 6)
+texture = ExtResource("4_6vie0")
+centered = false
+offset = Vector2(0, 20)
+
+[node name="Sprite2D3" type="Sprite2D" parent="background"]
+scale = Vector2(6, 6)
+texture = ExtResource("5_4ngnr")
+centered = false
+offset = Vector2(0, 20)
+
+[node name="Sprite2D2" type="Sprite2D" parent="background"]
+scale = Vector2(6, 6)
+texture = ExtResource("6_8dh3r")
+centered = false
+offset = Vector2(0, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+scale = Vector2(6, 6)
+texture = ExtResource("7_7c62j")
+centered = false
+offset = Vector2(0, 20)
+
+[node name="Menu" parent="." instance=ExtResource("9_716hu")]
+visible = false
+
+[node name="AiChoice" parent="." instance=ExtResource("10_ssjr3")]
+visible = false
+
+[node name="GameType" parent="." instance=ExtResource("11_imroq")]
+visible = false
+
+[node name="Help" parent="." instance=ExtResource("12_joah0")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("13_pwelt")]
+visible = false
+
+[node name="PlayGameLocal" parent="." instance=ExtResource("25_ikb5t")]
+visible = false
+
+[node name="PlayGameAI" parent="." instance=ExtResource("26_rng7e")]
+visible = false
+
+[node name="PlayGameOnline" parent="." instance=ExtResource("27_anv2f")]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_hls12")
+autoplay = true
+bus = &"music"
+parameters/looping = true
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_k25x3")
+volume_db = -1.0
+bus = &"sfx"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_mf5u1")
+volume_db = 2.0
+bus = &"sfx"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d18nv75s4fvkr"]
+
+[ext_resource type="Texture2D" uid="uid://dryy4bnna6ohl" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Banner_Upward_01a.png" id="1_dgs7c"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="2_nnpa5"]
+
+[sub_resource type="Theme" id="Theme_dnfmq"]
+default_font = ExtResource("2_nnpa5")
+default_font_size = 69
+
+[node name="OppTurn" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(972, 55)
+scale = Vector2(4.52083, 3.4375)
+texture = ExtResource("1_dgs7c")
+
+[node name="HelpText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 27)
+offset_left = 883.0
+offset_top = 40.0
+offset_right = 1172.0
+offset_bottom = 67.0
+size_flags_vertical = 4
+theme = SubResource("Theme_dnfmq")
+text = "You Won!"
+scroll_active = false

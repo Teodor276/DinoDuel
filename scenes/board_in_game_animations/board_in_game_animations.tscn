@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfoc0nngg72tr"]
+
+[ext_resource type="Script" path="res://scenes/board_in_game_animations/board_in_game_animations.gd" id="1_t7h1s"]
+[ext_resource type="SpriteFrames" uid="uid://cdllq6vlkke7b" path="res://scenes/board_in_game_animations/BoardMoveFrames.tres" id="2_g32g3"]
+
+[node name="DinoInGameAnimations" type="Node2D"]
+script = ExtResource("1_t7h1s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("2_g32g3")
+animation = &"board_smoke"
+frame = 7
+frame_progress = 1.0

@@ -1,0 +1,383 @@
+[gd_scene load_steps=43 format=3 uid="uid://6dy02mwnkdky"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/play_game_online.gd" id="1_kr0g7"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="4_c1p68"]
+[ext_resource type="Texture2D" uid="uid://dbqpawrn1cbun" path="res://assets/dinosaurs/male/olaf/base/idle.png" id="5_48qqh"]
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/dino_1.gd" id="6_5u1vy"]
+[ext_resource type="Texture2D" uid="uid://cb5c1nqyvfqyy" path="res://assets/dinosaurs/female/mort/base/idle.png" id="6_ccup2"]
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="7_8n0d3"]
+[ext_resource type="Texture2D" uid="uid://vs8o446gjge" path="res://assets/dinosaurs/male/loki/base/idle.png" id="7_yjqmr"]
+[ext_resource type="Texture2D" uid="uid://crje3bii3jgks" path="res://assets/dinosaurs/female/nico/base/idle.png" id="8_63kqr"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="9_ey7f0"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="10_garqh"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="10_jmxu8"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="11_d4oux"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="12_bi8g2"]
+[ext_resource type="Texture2D" uid="uid://cptl8tgk6byhk" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a - Right.png" id="14_rtjh6"]
+[ext_resource type="PackedScene" uid="uid://bqwuqjmxqslbj" path="res://scenes/loading_scene/loading_scene.tscn" id="15_084qi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfue7"]
+font_size = 40
+font_color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_faw0u"]
+texture = ExtResource("4_c1p68")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xur1a"]
+atlas = ExtResource("5_48qqh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg3t3"]
+atlas = ExtResource("5_48qqh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gak"]
+atlas = ExtResource("5_48qqh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sstvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xur1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg3t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7gak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xufy"]
+atlas = ExtResource("6_ccup2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8t57"]
+atlas = ExtResource("6_ccup2")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21o07"]
+atlas = ExtResource("6_ccup2")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpbtt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xufy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8t57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21o07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swq88"]
+atlas = ExtResource("7_yjqmr")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilho"]
+atlas = ExtResource("7_yjqmr")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdyl5"]
+atlas = ExtResource("7_yjqmr")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6dkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swq88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lilho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdyl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhh6u"]
+atlas = ExtResource("8_63kqr")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8xg8"]
+atlas = ExtResource("8_63kqr")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2aq5"]
+atlas = ExtResource("8_63kqr")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53nmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhh6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8xg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2aq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coors"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwkcu"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("9_ey7f0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3thom"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("10_garqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7u0k"]
+content_margin_bottom = 22.0
+texture = ExtResource("11_d4oux")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgs3x"]
+content_margin_left = 100.0
+content_margin_top = 100.0
+content_margin_right = 100.0
+content_margin_bottom = 75.0
+texture = ExtResource("4_c1p68")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikum8"]
+texture = ExtResource("11_d4oux")
+modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pse3j"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("9_ey7f0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77ek2"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("10_garqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k8cg"]
+content_margin_bottom = 22.0
+texture = ExtResource("11_d4oux")
+
+[node name="play_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kr0g7")
+
+[node name="layout" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 90.0
+offset_right = 731.0
+offset_bottom = 990.0
+
+[node name="p1 character select" type="VBoxContainer" parent="layout"]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="player label" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_8n0d3")
+
+[node name="Label" type="Label" parent="layout/p1 character select/player label"]
+layout_mode = 2
+text = "Player 1"
+label_settings = SubResource("LabelSettings_qfue7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="char preview" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(550, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_faw0u")
+
+[node name="olaf" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_sstvg")
+animation = &"idle"
+script = ExtResource("6_5u1vy")
+
+[node name="mort" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_cpbtt")
+script = ExtResource("6_5u1vy")
+
+[node name="loki" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_y6dkq")
+script = ExtResource("6_5u1vy")
+
+[node name="nico" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_53nmv")
+script = ExtResource("6_5u1vy")
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_coors")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwkcu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3thom")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7u0k")
+icon = ExtResource("12_bi8g2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="create_room" type="Button" parent="."]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 103.0
+offset_right = 1257.0
+offset_bottom = 178.0
+focus_mode = 0
+theme = ExtResource("7_8n0d3")
+text = "Create Room"
+
+[node name="join_room" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1375.0
+offset_top = 103.0
+offset_right = 1658.0
+offset_bottom = 178.0
+focus_mode = 0
+theme = ExtResource("7_8n0d3")
+text = "Join Room"
+
+[node name="CreateRoomInput" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 981.0
+offset_top = 395.0
+offset_right = 1776.0
+offset_bottom = 786.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sgs3x")
+
+[node name="CreateRoomLabel" type="RichTextLabel" parent="CreateRoomInput"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("10_jmxu8")
+theme_override_font_sizes/normal_font_size = 40
+text = "Enter room name:"
+
+[node name="CreateRoomText" type="LineEdit" parent="CreateRoomInput"]
+custom_minimum_size = Vector2(475, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("10_jmxu8")
+theme_override_font_sizes/font_size = 40
+context_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="CharsRemainingLabel" type="RichTextLabel" parent="CreateRoomInput"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("10_jmxu8")
+theme_override_font_sizes/normal_font_size = 40
+text = "0/25"
+
+[node name="CreateRoomButton" type="Button" parent="CreateRoomInput"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+theme = ExtResource("7_8n0d3")
+theme_override_colors/font_disabled_color = Color(0.337255, 0.337255, 0.337255, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ikum8")
+disabled = true
+text = "Create"
+
+[node name="MoveRight" type="Button" parent="."]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 521.0
+offset_right = 750.0
+offset_bottom = 621.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_pse3j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_77ek2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0k8cg")
+icon = ExtResource("14_rtjh6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveLeft" type="Button" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 526.0
+offset_right = 239.0
+offset_bottom = 626.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_pse3j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_77ek2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0k8cg")
+icon = ExtResource("12_bi8g2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LoadingScreenLayer" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="LoadingScreenLayer" instance=ExtResource("15_084qi")]
+
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="create_room" to="." method="_on_button_hover"]
+[connection signal="pressed" from="create_room" to="." method="_on_create_room_pressed"]
+[connection signal="mouse_entered" from="join_room" to="." method="_on_button_hover"]
+[connection signal="pressed" from="join_room" to="." method="_on_join_room_pressed"]
+[connection signal="text_changed" from="CreateRoomInput/CreateRoomText" to="." method="_on_create_room_text_text_changed"]
+[connection signal="mouse_entered" from="CreateRoomInput/CreateRoomButton" to="." method="_on_create_room_button_mouse_entered"]
+[connection signal="pressed" from="CreateRoomInput/CreateRoomButton" to="." method="_on_create_room_button_pressed"]
+[connection signal="mouse_entered" from="MoveRight" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
+[connection signal="mouse_entered" from="MoveLeft" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]

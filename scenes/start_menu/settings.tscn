@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://chneh5a2axl62"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/settings.gd" id="1_g36mo"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="3_74s50"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="3_e60f0"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="3_eggra"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="4_cptma"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="4_h2t1a"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="7_xbprs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uahap"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftoge"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("3_eggra")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uk61"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_e60f0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r15n3"]
+content_margin_bottom = 22.0
+texture = ExtResource("4_cptma")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6gu7"]
+content_margin_left = 200.0
+content_margin_top = 200.0
+content_margin_right = 200.0
+content_margin_bottom = 200.0
+texture = ExtResource("3_74s50")
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g36mo")
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uahap")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ftoge")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2uk61")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r15n3")
+icon = ExtResource("4_h2t1a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1450, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -375.0
+offset_right = 750.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_w6gu7")
+
+[node name="SettingsBox" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="RichTextLabel" parent="SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("7_xbprs")
+theme_override_font_sizes/normal_font_size = 75
+text = "Music volume"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SfxVolumeLabel" type="RichTextLabel" parent="SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("7_xbprs")
+theme_override_font_sizes/normal_font_size = 75
+text = "SFX volume"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SfxVolumeSlider" type="HSlider" parent="SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="SettingsPanel/SettingsBox/MusicVolumeSlider" to="." method="_on_button_hover"]
+[connection signal="value_changed" from="SettingsPanel/SettingsBox/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="mouse_entered" from="SettingsPanel/SettingsBox/SfxVolumeSlider" to="." method="_on_button_hover"]
+[connection signal="value_changed" from="SettingsPanel/SettingsBox/SfxVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

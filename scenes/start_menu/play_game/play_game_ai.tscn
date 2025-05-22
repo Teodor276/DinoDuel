@@ -1,0 +1,303 @@
+[gd_scene load_steps=37 format=3 uid="uid://wwofkrc123pt"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/play_game_ai.gd" id="1_lu7qq"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="4_31683"]
+[ext_resource type="Texture2D" uid="uid://dbqpawrn1cbun" path="res://assets/dinosaurs/male/olaf/base/idle.png" id="5_m051s"]
+[ext_resource type="Texture2D" uid="uid://crje3bii3jgks" path="res://assets/dinosaurs/female/nico/base/idle.png" id="6_kdfdb"]
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/dino_1.gd" id="6_w0ve8"]
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="7_lfg0j"]
+[ext_resource type="Texture2D" uid="uid://cb5c1nqyvfqyy" path="res://assets/dinosaurs/female/mort/base/idle.png" id="7_mduqy"]
+[ext_resource type="Texture2D" uid="uid://vs8o446gjge" path="res://assets/dinosaurs/male/loki/base/idle.png" id="8_f60ao"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="9_wmciu"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="10_c6fkh"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="11_usyvd"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="12_aa7h6"]
+[ext_resource type="Texture2D" uid="uid://cptl8tgk6byhk" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a - Right.png" id="13_3fnf0"]
+[ext_resource type="PackedScene" uid="uid://bqwuqjmxqslbj" path="res://scenes/loading_scene/loading_scene.tscn" id="14_sx0g6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfue7"]
+font_size = 40
+font_color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5fy4t"]
+texture = ExtResource("4_31683")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xur1a"]
+atlas = ExtResource("5_m051s")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg3t3"]
+atlas = ExtResource("5_m051s")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gak"]
+atlas = ExtResource("5_m051s")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndh3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xur1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg3t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7gak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xufy"]
+atlas = ExtResource("7_mduqy")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8t57"]
+atlas = ExtResource("7_mduqy")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21o07"]
+atlas = ExtResource("7_mduqy")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xk6hw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xufy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8t57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21o07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swq88"]
+atlas = ExtResource("8_f60ao")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilho"]
+atlas = ExtResource("8_f60ao")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdyl5"]
+atlas = ExtResource("8_f60ao")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fl2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swq88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lilho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdyl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhh6u"]
+atlas = ExtResource("6_kdfdb")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8xg8"]
+atlas = ExtResource("6_kdfdb")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2aq5"]
+atlas = ExtResource("6_kdfdb")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aib4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhh6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8xg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2aq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coors"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwkcu"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("9_wmciu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3thom"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("10_c6fkh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7u0k"]
+content_margin_bottom = 22.0
+texture = ExtResource("11_usyvd")
+
+[node name="play_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lu7qq")
+
+[node name="layout" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 1760.0
+offset_bottom = 990.0
+
+[node name="p1 character select" type="VBoxContainer" parent="layout"]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="player label" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lfg0j")
+
+[node name="Label" type="Label" parent="layout/p1 character select/player label"]
+layout_mode = 2
+text = "Player 1"
+label_settings = SubResource("LabelSettings_qfue7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="char preview" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(550, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_5fy4t")
+
+[node name="olaf" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_ndh3w")
+animation = &"idle"
+frame_progress = 0.037401
+script = ExtResource("6_w0ve8")
+
+[node name="mort" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_xk6hw")
+frame_progress = 0.432739
+script = ExtResource("6_w0ve8")
+
+[node name="loki" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_3fl2j")
+frame_progress = 0.477553
+script = ExtResource("6_w0ve8")
+
+[node name="nico" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_aib4r")
+script = ExtResource("6_w0ve8")
+
+[node name="start game" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+offset_left = 760.0
+offset_top = 924.0
+offset_right = 1160.0
+offset_bottom = 1024.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="start game"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_lfg0j")
+text = "Start Game"
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_coors")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwkcu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3thom")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7u0k")
+icon = ExtResource("12_aa7h6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveRight" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 496.0
+offset_right = 1270.0
+offset_bottom = 596.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwkcu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3thom")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7u0k")
+icon = ExtResource("13_3fnf0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveLeft" type="Button" parent="."]
+layout_mode = 2
+offset_left = 651.0
+offset_top = 498.0
+offset_right = 751.0
+offset_bottom = 598.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwkcu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3thom")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7u0k")
+icon = ExtResource("12_aa7h6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LoadingScreenLayer" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="LoadingScreenLayer" instance=ExtResource("14_sx0g6")]
+
+[connection signal="mouse_entered" from="start game/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="start game/Button" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="MoveRight" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
+[connection signal="mouse_entered" from="MoveLeft" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]

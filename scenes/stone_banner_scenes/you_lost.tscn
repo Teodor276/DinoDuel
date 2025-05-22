@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn1jmrwnm1v0x"]
+
+[ext_resource type="Script" path="res://scenes/stone_banner_scenes/end_banner.gd" id="1_0jxht"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="2_7essa"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="3_cat07"]
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="4_hp7xc"]
+[ext_resource type="AudioStream" uid="uid://dlc8g63x0jwiw" path="res://sound/hover.wav" id="5_opbrm"]
+[ext_resource type="AudioStream" uid="uid://b73r3ptsvk3s4" path="res://sound/select5.wav" id="6_0popw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fo3gy"]
+texture = ExtResource("2_7essa")
+
+[node name="YourTurn" type="Node2D"]
+script = ExtResource("1_0jxht")
+
+[node name="Background" type="PanelContainer" parent="."]
+offset_left = 445.0
+offset_top = 263.0
+offset_right = 1499.0
+offset_bottom = 796.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fo3gy")
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_left = 743.0
+offset_top = 434.0
+offset_right = 1258.0
+offset_bottom = 554.0
+theme_override_fonts/normal_font = ExtResource("3_cat07")
+theme_override_font_sizes/normal_font_size = 140
+text = "You Lost..."
+
+[node name="MainMenu" type="Button" parent="."]
+offset_left = 624.0
+offset_top = 587.0
+offset_right = 945.0
+offset_bottom = 653.0
+focus_mode = 0
+theme = ExtResource("4_hp7xc")
+text = "Return to Menu"
+
+[node name="Close" type="Button" parent="."]
+offset_left = 1011.0
+offset_top = 586.0
+offset_right = 1332.0
+offset_bottom = 652.0
+focus_mode = 0
+theme = ExtResource("4_hp7xc")
+text = "Review Game
+"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_opbrm")
+volume_db = -1.0
+bus = &"sfx"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0popw")
+volume_db = 2.0
+bus = &"sfx"
+
+[connection signal="mouse_entered" from="MainMenu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="Close" to="." method="_on_close_mouse_entered"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

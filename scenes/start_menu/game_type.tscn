@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://dq2rorep7x7xe"]
+
+[ext_resource type="Script" path="res://scenes/start_menu/game_type.gd" id="1_feock"]
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="2_fgvyf"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="3_dlj5a"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="4_ymk54"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="5_lwaws"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="6_ljfuy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrysp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqg75"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("3_dlj5a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pwdcr"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_ymk54")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi4sr"]
+content_margin_bottom = 22.0
+texture = ExtResource("5_lwaws")
+
+[node name="GameType" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_feock")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -102.0
+offset_right = 200.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="human vs human local" type="PanelContainer" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button2" type="Button" parent="VBoxContainer/human vs human local"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_fgvyf")
+text = "Human vs. Human
+(Local)"
+
+[node name="human vs human" type="PanelContainer" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button2" type="Button" parent="VBoxContainer/human vs human"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_fgvyf")
+text = "Human vs. Human
+(Online)"
+
+[node name="human vs ai" type="PanelContainer" parent="VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button2" type="Button" parent="VBoxContainer/human vs ai"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_fgvyf")
+text = "Human vs. AI"
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vrysp")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vqg75")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pwdcr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vi4sr")
+icon = ExtResource("6_ljfuy")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="mouse_entered" from="VBoxContainer/human vs human local/Button2" to="." method="_on_button_hover"]
+[connection signal="pressed" from="VBoxContainer/human vs human local/Button2" to="." method="_on_local_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/human vs human/Button2" to="." method="_on_button_hover"]
+[connection signal="pressed" from="VBoxContainer/human vs human/Button2" to="." method="_on_online_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/human vs ai/Button2" to="." method="_on_button_hover"]
+[connection signal="pressed" from="VBoxContainer/human vs ai/Button2" to="." method="_on_ai_button_pressed"]
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]

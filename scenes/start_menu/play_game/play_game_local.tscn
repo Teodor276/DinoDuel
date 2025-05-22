@@ -1,0 +1,452 @@
+[gd_scene load_steps=47 format=3 uid="uid://doa7qsc4olnyf"]
+
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="1_hn1g5"]
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/play_game_local.gd" id="1_wnwep"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="4_5p2tv"]
+[ext_resource type="Texture2D" uid="uid://dbqpawrn1cbun" path="res://assets/dinosaurs/male/olaf/base/idle.png" id="5_akb46"]
+[ext_resource type="Script" path="res://scenes/start_menu/play_game/dino_1.gd" id="6_odr3q"]
+[ext_resource type="Texture2D" uid="uid://cb5c1nqyvfqyy" path="res://assets/dinosaurs/female/mort/base/idle.png" id="6_urrsd"]
+[ext_resource type="Texture2D" uid="uid://crje3bii3jgks" path="res://assets/dinosaurs/female/nico/base/idle.png" id="8_f5pvt"]
+[ext_resource type="Texture2D" uid="uid://vs8o446gjge" path="res://assets/dinosaurs/male/loki/base/idle.png" id="8_mbk8r"]
+[ext_resource type="Texture2D" uid="uid://dujljn4s586jk" path="res://assets/dinosaurs/male/kuro/base/idle.png" id="9_262wm"]
+[ext_resource type="Texture2D" uid="uid://7sd5t6c4nuyc" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Large_Lock_02a1.png" id="9_orctu"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="10_vj31g"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="11_pdapn"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="12_nvqwn"]
+[ext_resource type="Texture2D" uid="uid://cptl8tgk6byhk" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a - Right.png" id="13_yq1ng"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="14_plano"]
+[ext_resource type="PackedScene" uid="uid://bqwuqjmxqslbj" path="res://scenes/loading_scene/loading_scene.tscn" id="16_mh8ig"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfue7"]
+font_size = 40
+font_color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2pbv"]
+texture = ExtResource("4_5p2tv")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xur1a"]
+atlas = ExtResource("5_akb46")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg3t3"]
+atlas = ExtResource("5_akb46")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gak"]
+atlas = ExtResource("5_akb46")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfa75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xur1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg3t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7gak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xufy"]
+atlas = ExtResource("6_urrsd")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8t57"]
+atlas = ExtResource("6_urrsd")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21o07"]
+atlas = ExtResource("6_urrsd")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r383l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xufy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8t57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21o07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swq88"]
+atlas = ExtResource("8_mbk8r")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilho"]
+atlas = ExtResource("8_mbk8r")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdyl5"]
+atlas = ExtResource("8_mbk8r")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yi1ol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swq88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lilho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdyl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhh6u"]
+atlas = ExtResource("8_f5pvt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8xg8"]
+atlas = ExtResource("8_f5pvt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2aq5"]
+atlas = ExtResource("8_f5pvt")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hl4px"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhh6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8xg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2aq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojwsr"]
+atlas = ExtResource("9_262wm")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_816n1"]
+atlas = ExtResource("9_262wm")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr501"]
+atlas = ExtResource("9_262wm")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7t0eo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojwsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_816n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr501")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hg4fy"]
+content_margin_top = 10.0
+content_margin_bottom = 17.0
+texture = ExtResource("9_orctu")
+modulate_color = Color(0.709804, 0.709804, 0.709804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coors"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwkcu"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("10_vj31g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3thom"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("12_nvqwn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7u0k"]
+content_margin_bottom = 22.0
+texture = ExtResource("11_pdapn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu1oi"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("10_vj31g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1e43"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("12_nvqwn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sue6f"]
+content_margin_bottom = 22.0
+texture = ExtResource("11_pdapn")
+
+[node name="play_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wnwep")
+
+[node name="layout" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 1760.0
+offset_bottom = 894.0
+
+[node name="p1 character select" type="VBoxContainer" parent="layout"]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="player label" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_hn1g5")
+
+[node name="Label" type="Label" parent="layout/p1 character select/player label"]
+layout_mode = 2
+text = "Player 1"
+label_settings = SubResource("LabelSettings_qfue7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="char preview" type="PanelContainer" parent="layout/p1 character select"]
+custom_minimum_size = Vector2(550, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_d2pbv")
+
+[node name="olaf" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_dfa75")
+animation = &"idle"
+script = ExtResource("6_odr3q")
+
+[node name="mort" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_r383l")
+script = ExtResource("6_odr3q")
+
+[node name="loki" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yi1ol")
+script = ExtResource("6_odr3q")
+
+[node name="nico" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_hl4px")
+script = ExtResource("6_odr3q")
+
+[node name="kuro" type="AnimatedSprite2D" parent="layout/p1 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_7t0eo")
+frame_progress = 0.430642
+script = ExtResource("6_odr3q")
+
+[node name="p2 character select" type="VBoxContainer" parent="layout"]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="player label" type="PanelContainer" parent="layout/p2 character select"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_hn1g5")
+
+[node name="Label" type="Label" parent="layout/p2 character select/player label"]
+layout_mode = 2
+text = "Player 2"
+label_settings = SubResource("LabelSettings_qfue7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="char preview" type="PanelContainer" parent="layout/p2 character select"]
+custom_minimum_size = Vector2(550, 700)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_d2pbv")
+
+[node name="olaf" type="AnimatedSprite2D" parent="layout/p2 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_dfa75")
+animation = &"idle"
+script = ExtResource("6_odr3q")
+
+[node name="mort" type="AnimatedSprite2D" parent="layout/p2 character select/char preview"]
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_r383l")
+script = ExtResource("6_odr3q")
+
+[node name="loki" type="AnimatedSprite2D" parent="layout/p2 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yi1ol")
+script = ExtResource("6_odr3q")
+
+[node name="nico" type="AnimatedSprite2D" parent="layout/p2 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_hl4px")
+script = ExtResource("6_odr3q")
+
+[node name="kuro" type="AnimatedSprite2D" parent="layout/p2 character select/char preview"]
+visible = false
+position = Vector2(275, 350)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_7t0eo")
+frame_progress = 0.813937
+script = ExtResource("6_odr3q")
+
+[node name="start game" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+offset_left = 760.0
+offset_top = 924.0
+offset_right = 1160.0
+offset_bottom = 1024.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Button" type="Button" parent="start game"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_hn1g5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hg4fy")
+text = "Start Game"
+
+[node name="back button" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_coors")
+
+[node name="Button" type="Button" parent="back button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_cwkcu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3thom")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c7u0k")
+icon = ExtResource("14_plano")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveRightLeft" type="Button" parent="."]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 502.0
+offset_right = 864.0
+offset_bottom = 602.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vu1oi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j1e43")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sue6f")
+icon = ExtResource("13_yq1ng")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveLeftLeft" type="Button" parent="."]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 508.0
+offset_right = 354.0
+offset_bottom = 608.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vu1oi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j1e43")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sue6f")
+icon = ExtResource("14_plano")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveRightRight" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1567.0
+offset_top = 503.0
+offset_right = 1667.0
+offset_bottom = 603.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vu1oi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j1e43")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sue6f")
+icon = ExtResource("13_yq1ng")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveLeftRight" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 504.0
+offset_right = 1159.0
+offset_bottom = 604.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vu1oi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j1e43")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sue6f")
+icon = ExtResource("14_plano")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LoadingScreenLayer" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="LoadingScreenLayer" instance=ExtResource("16_mh8ig")]
+
+[connection signal="mouse_entered" from="start game/Button" to="." method="_on_button_mouse_entered_start"]
+[connection signal="pressed" from="start game/Button" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="back button/Button" to="." method="_on_button_hover"]
+[connection signal="pressed" from="back button/Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="MoveRightLeft" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveRightLeft" to="." method="_on_move_right_left_pressed"]
+[connection signal="mouse_entered" from="MoveLeftLeft" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveLeftLeft" to="." method="_on_move_left_left_pressed"]
+[connection signal="mouse_entered" from="MoveRightRight" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveRightRight" to="." method="_on_move_right_right_pressed"]
+[connection signal="mouse_entered" from="MoveLeftRight" to="." method="_on_button_hover"]
+[connection signal="pressed" from="MoveLeftRight" to="." method="_on_move_left_right_pressed"]

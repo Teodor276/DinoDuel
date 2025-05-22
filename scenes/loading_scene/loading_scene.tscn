@@ -1,0 +1,354 @@
+[gd_scene load_steps=23 format=3 uid="uid://bqwuqjmxqslbj"]
+
+[ext_resource type="Script" path="res://scenes/loading_scene/loading_scene.gd" id="1_iwrix"]
+[ext_resource type="Texture2D" uid="uid://dix8o8sevwbla" path="res://assets/dinosaurs/male/loki/egg/move.png" id="1_rhqm3"]
+[ext_resource type="Texture2D" uid="uid://cc86xu0onbhqr" path="res://assets/dinosaurs/male/loki/egg/hatch.png" id="2_l3434"]
+[ext_resource type="Texture2D" uid="uid://1vckyksq8w5c" path="res://assets/ui/logo_pics/Dino Duel L.png" id="3_8ogh0"]
+[ext_resource type="Texture2D" uid="uid://fc7br3ci0x4b" path="res://assets/ui/logo_pics/Dino Duel O.png" id="4_6bd3h"]
+[ext_resource type="Texture2D" uid="uid://don6bir177111" path="res://assets/ui/logo_pics/Pixelated A.png" id="5_6tqnm"]
+[ext_resource type="Texture2D" uid="uid://tqgrryqpyttk" path="res://assets/ui/logo_pics/Dino Duel D (2).png" id="6_mpa3h"]
+[ext_resource type="Texture2D" uid="uid://oi3ippo0ih6i" path="res://assets/ui/logo_pics/Dino Duel I.png" id="7_sl1o1"]
+[ext_resource type="Texture2D" uid="uid://dr7o7ewj8yk1d" path="res://assets/ui/logo_pics/Dino Duel N.png" id="8_ak3d6"]
+[ext_resource type="Texture2D" uid="uid://bbn753f8xd8ao" path="res://assets/ui/logo_pics/Pixelated G.png" id="9_s1jv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v88uq"]
+atlas = ExtResource("1_rhqm3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrn5c"]
+atlas = ExtResource("1_rhqm3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opis"]
+atlas = ExtResource("1_rhqm3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llua3"]
+atlas = ExtResource("1_rhqm3")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tklal"]
+atlas = ExtResource("2_l3434")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhvs2"]
+atlas = ExtResource("2_l3434")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y4eu"]
+atlas = ExtResource("2_l3434")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lilvk"]
+atlas = ExtResource("2_l3434")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7w3h"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_v88uq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_hrn5c")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4opis")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_llua3")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_tklal")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lhvs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y4eu")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lilvk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lilvk")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_7y4eu")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_tklal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llua3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_1pvrv"]
+resource_name = "Letters_Move"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Letters/Control/L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(117, 225), Vector2(117, 205), Vector2(117, 223)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letters/Control/DinoDuelO:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(153, 226), Vector2(151, 198), Vector2(153, 225)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letters/Control/PixelatedA:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.03333, 1.5, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(190, 225), Vector2(189, 197), Vector2(189, 225)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letters/Control/DinoDuelD:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.46667, 1.96667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(227, 226), Vector2(226, 194), Vector2(226, 225)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Letters/Control/DinoDuelI:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.96667, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(263, 226), Vector2(263, 194), Vector2(262, 225)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Letters/Control/DinoDuelN:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.5, 3, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 225), Vector2(300, 194), Vector2(299, 224)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letters/Control/PixelatedG:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.96667, 3.46667, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(337, 224), Vector2(336, 191), Vector2(336, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_5sdje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Letters/Control/L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(117, 225)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Letters/Control/DinoDuelO:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(153, 226)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Letters/Control/PixelatedA:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 225)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Letters/Control/DinoDuelD:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(227, 226)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Letters/Control/DinoDuelI:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(263, 226)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Letters/Control/DinoDuelN:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 225)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Letters/Control/PixelatedG:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(337, 224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6g6ye"]
+_data = {
+"Letters_Move": SubResource("Animation_1pvrv"),
+"RESET": SubResource("Animation_5sdje")
+}
+
+[node name="LoadingScreen" type="Node2D"]
+z_index = 10
+position = Vector2(200, -100)
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_iwrix")
+
+[node name="Letters" type="CanvasLayer" parent="."]
+layer = 4
+visible = false
+offset = Vector2(-340, 250)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, -340, 250)
+
+[node name="Control" type="Control" parent="Letters"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 200.0
+offset_top = -100.0
+offset_right = 240.0
+offset_bottom = -60.0
+
+[node name="Egg" type="AnimatedSprite2D" parent="Letters/Control"]
+position = Vector2(225.333, 168.667)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_g7w3h")
+autoplay = "default"
+frame_progress = 0.786096
+
+[node name="L" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(117, 225)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_8ogh0")
+
+[node name="DinoDuelO" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(153, 226)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_6bd3h")
+
+[node name="PixelatedA" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(190, 225)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("5_6tqnm")
+
+[node name="DinoDuelD" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(227, 226)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("6_mpa3h")
+
+[node name="DinoDuelI" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(263, 226)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_sl1o1")
+
+[node name="DinoDuelN" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(300, 225)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_ak3d6")
+
+[node name="PixelatedG" type="Sprite2D" parent="Letters/Control"]
+position = Vector2(337, 224)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("9_s1jv7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Letters/Control"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_6g6ye")
+}
+speed_scale = 1.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -130.0
+offset_top = -57.0
+offset_right = 2043.0
+offset_bottom = 1135.0
+color = Color(0.0383972, 0.0383972, 0.0383972, 1)

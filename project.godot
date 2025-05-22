@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Dino Duel"
+config/version="1.0.0.3"
+run/main_scene="res://scenes/start_menu/menu_global_manager.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+config/icon="res://assets/game_icon/dinoicon.png"
+config/windows_native_icon="res://assets/game_icon/dinoicon.ico"
+
+[audio]
+
+buses/default_bus_layout="res://bus_layout.tres"
+
+[autoload]
+
+AiChoice="*res://scenes/start_menu/ai_choice.gd"
+GlobalVars="*res://scripts/global_vars.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
+[dotnet]
+
+project/assembly_name="proba"
+
+[importer_defaults]
+
+texture={
+"mipmaps/generate": true,
+"process/fix_alpha_border": false
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+textures/default_filters/anisotropic_filtering_level=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+environment/screen_space_reflection/roughness_quality=0

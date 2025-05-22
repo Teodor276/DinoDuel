@@ -1,0 +1,608 @@
+[gd_scene load_steps=61 format=3 uid="uid://cp5t4mgrtw3ds"]
+
+[ext_resource type="Texture2D" uid="uid://c1om826ks4m3b" path="res://assets/gameplay/tiles/normal_board_tile.png" id="1_thh36"]
+[ext_resource type="Texture2D" uid="uid://uidjlmdl2wuu" path="res://assets/gameplay/tiles/preview_tile.png" id="2_m87ab"]
+[ext_resource type="Texture2D" uid="uid://da5ml0tjrbe5i" path="res://assets/gameplay/tiles/selected_tile.png" id="3_we7pd"]
+[ext_resource type="Script" path="res://scenes/local_game/local_game.gd" id="6_cbq5d"]
+[ext_resource type="Texture2D" uid="uid://b72gfabcdkna5" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Frame_Standard_02a.png" id="7_qy4uw"]
+[ext_resource type="Texture2D" uid="uid://cb5c1nqyvfqyy" path="res://assets/dinosaurs/female/mort/base/idle.png" id="8_4ayp4"]
+[ext_resource type="FontFile" uid="uid://brrxutoxafvo7" path="res://assets/Toriko.ttf" id="8_5p7uj"]
+[ext_resource type="FontFile" uid="uid://oecwugkqtb28" path="res://assets/dogica.ttf" id="8_ur06k"]
+[ext_resource type="Theme" uid="uid://cvdcsgkxe4hex" path="res://assets/ui/universal_theme.tres" id="9_2dugg"]
+[ext_resource type="Texture2D" uid="uid://dujljn4s586jk" path="res://assets/dinosaurs/male/kuro/base/idle.png" id="9_svksc"]
+[ext_resource type="Texture2D" uid="uid://5f4v7yv64yjp" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a4.png" id="10_8m0hc"]
+[ext_resource type="Texture2D" uid="uid://bho5tbem6kb6" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a3.png" id="11_hpxat"]
+[ext_resource type="Texture2D" uid="uid://cp3xnj4y1fj3u" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Large_Release_02a4.png" id="11_qvyin"]
+[ext_resource type="Texture2D" uid="uid://clw0d6y4veguv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Button_Small_Release_02a2.png" id="12_kldtg"]
+[ext_resource type="Texture2D" uid="uid://5rfujtg18b2a" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_Reverse_01a.png" id="13_1c4bs"]
+[ext_resource type="Texture2D" uid="uid://dymotkku1fkul" path="res://assets/menu-icon.png" id="13_vnuw1"]
+[ext_resource type="Texture2D" uid="uid://cpd4sopislhv" path="res://assets/ui/04_Stone_Theme/Sprites/UI_Stone_Arrow_Large_01a.png" id="14_7pcvw"]
+[ext_resource type="PackedScene" uid="uid://cyxyuuilwidej" path="res://scenes/stone_banner_scenes/you_tied_top.tscn" id="15_pvw76"]
+[ext_resource type="PackedScene" uid="uid://cmqp1vuxp7bdn" path="res://scenes/stone_banner_scenes/player_1_won.tscn" id="16_rap66"]
+[ext_resource type="Texture2D" uid="uid://bcmvim2osr6ix" path="res://assets/gameplay/background/slightly_pixelated_background.png" id="16_wo6kj"]
+[ext_resource type="PackedScene" uid="uid://cts2rnhfncdw5" path="res://scenes/stone_banner_scenes/you_tied.tscn" id="17_1qg5x"]
+[ext_resource type="PackedScene" uid="uid://d3rnn8axr6jtv" path="res://scenes/stone_banner_scenes/player_2_won.tscn" id="17_d715m"]
+[ext_resource type="PackedScene" uid="uid://bcp4auilqxu2g" path="res://scenes/stone_banner_scenes/player_1_won_top.tscn" id="18_d1nu7"]
+[ext_resource type="PackedScene" uid="uid://8enm2rwtnttj" path="res://scenes/stone_banner_scenes/player_2_won_top.tscn" id="19_xdswk"]
+[ext_resource type="PackedScene" uid="uid://c42ngx31rhsvv" path="res://scenes/stone_banner_scenes/player_1_turn.tscn" id="21_5hrpe"]
+[ext_resource type="PackedScene" uid="uid://iw41vqe188q0" path="res://scenes/stone_banner_scenes/player_2_turn.tscn" id="22_up0bk"]
+[ext_resource type="AudioStream" uid="uid://wtl8dfdt5u0g" path="res://sound/music/13 Kremlantis (DKL).mp3" id="23_yyt4k"]
+[ext_resource type="AudioStream" uid="uid://dkcp3to41d82c" path="res://sound/music/31 Bonus Win.mp3" id="24_5lv6q"]
+[ext_resource type="AudioStream" uid="uid://ee1ioowib82j" path="res://sound/music/05 BGM #05.mp3" id="25_tsyek"]
+[ext_resource type="AudioStream" uid="uid://bgptunjwtbcjm" path="res://sound/music/12 Game Over.mp3" id="26_mehfw"]
+[ext_resource type="AudioStream" uid="uid://dogic8e0ya6ci" path="res://sound/music/32 Game Over.mp3" id="27_ucdfl"]
+[ext_resource type="AudioStream" uid="uid://dlc8g63x0jwiw" path="res://sound/hover.wav" id="28_ib2lj"]
+[ext_resource type="AudioStream" uid="uid://b73r3ptsvk3s4" path="res://sound/select5.wav" id="29_f407n"]
+[ext_resource type="AudioStream" uid="uid://cbb5w7wqed2xl" path="res://sound/walking.wav" id="30_kx2dj"]
+[ext_resource type="PackedScene" uid="uid://bqwuqjmxqslbj" path="res://scenes/loading_scene/loading_scene.tscn" id="35_2w2b8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3i36l"]
+texture = ExtResource("1_thh36")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i77xg"]
+texture = ExtResource("2_m87ab")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67txl"]
+texture = ExtResource("3_we7pd")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s0fei"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(65, 65)
+sources/0 = SubResource("TileSetAtlasSource_3i36l")
+sources/1 = SubResource("TileSetAtlasSource_i77xg")
+sources/2 = SubResource("TileSetAtlasSource_67txl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a54ma"]
+content_margin_left = 125.0
+content_margin_top = 125.0
+content_margin_right = 125.0
+content_margin_bottom = 125.0
+texture = ExtResource("7_qy4uw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckhov"]
+content_margin_bottom = 30.0
+texture = ExtResource("10_8m0hc")
+modulate_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txxbo"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("11_hpxat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xo84i"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("12_kldtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phf1u"]
+content_margin_bottom = 30.0
+texture = ExtResource("10_8m0hc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0d7w"]
+atlas = ExtResource("8_4ayp4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28yem"]
+atlas = ExtResource("8_4ayp4")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06yjs"]
+atlas = ExtResource("8_4ayp4")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qku5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0d7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28yem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06yjs")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riqgw"]
+atlas = ExtResource("9_svksc")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfpcw"]
+atlas = ExtResource("9_svksc")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ina5w"]
+atlas = ExtResource("9_svksc")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pncxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riqgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfpcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ina5w")
+}],
+"loop": true,
+"name": &"kuro",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd463"]
+content_margin_left = 4.0
+content_margin_top = 8.0
+content_margin_bottom = 29.0
+texture = ExtResource("10_8m0hc")
+modulate_color = Color(0.709804, 0.709804, 0.709804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4vtfm"]
+content_margin_left = 4.0
+content_margin_top = 9.0
+content_margin_bottom = 21.0
+texture = ExtResource("11_hpxat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eswkl"]
+content_margin_left = 4.0
+content_margin_top = 18.0
+content_margin_bottom = 9.0
+texture = ExtResource("12_kldtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smyvj"]
+content_margin_left = 4.0
+content_margin_top = 8.0
+content_margin_bottom = 29.0
+texture = ExtResource("10_8m0hc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tti5m"]
+content_margin_top = 1.0
+content_margin_bottom = 17.0
+texture = ExtResource("11_hpxat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pthmm"]
+content_margin_top = 11.0
+content_margin_bottom = 2.0
+texture = ExtResource("12_kldtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rckm7"]
+content_margin_bottom = 22.0
+texture = ExtResource("10_8m0hc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3h5sn"]
+content_margin_left = 75.0
+content_margin_top = 30.0
+content_margin_right = 75.0
+content_margin_bottom = 30.0
+texture = ExtResource("11_qvyin")
+
+[node name="Main" type="Node2D"]
+
+[node name="HexGrid" type="TileMap" parent="."]
+position = Vector2(881, 414)
+tile_set = SubResource("TileSet_s0fei")
+rendering_quadrant_size = 17
+format = 2
+script = ExtResource("6_cbq5d")
+
+[node name="Camera2D" type="Camera2D" parent="HexGrid"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScreenDimmer" type="ColorRect" parent="CanvasLayer/Background"]
+visible = false
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 1078.0
+color = Color(0, 0, 0, 0.54902)
+
+[node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer/Background"]
+visible = false
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 441.5
+offset_top = 271.5
+offset_right = 1441.5
+offset_bottom = 771.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a54ma")
+
+[node name="SettingsBox" type="VBoxContainer" parent="CanvasLayer/Background/SettingsPanel"]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="RichTextLabel" parent="CanvasLayer/Background/SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("8_5p7uj")
+theme_override_font_sizes/normal_font_size = 40
+text = "Music volume"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/Background/SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 4.0
+max_value = 1.0
+step = 0.05
+
+[node name="SfxVolumeLabel" type="RichTextLabel" parent="CanvasLayer/Background/SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_fonts/normal_font = ExtResource("8_5p7uj")
+theme_override_font_sizes/normal_font_size = 40
+text = "SFX volume"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SfxVolumeSlider" type="HSlider" parent="CanvasLayer/Background/SettingsPanel/SettingsBox"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 4.0
+max_value = 1.0
+step = 0.05
+
+[node name="SettingsOkButton" type="Button" parent="CanvasLayer/Background/SettingsPanel/SettingsBox"]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 3.0
+focus_mode = 0
+theme = ExtResource("9_2dugg")
+text = "OK"
+
+[node name="HowToPlayPanel" type="Panel" parent="CanvasLayer/Background"]
+visible = false
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 316.5
+offset_top = 112.0
+offset_right = 1566.5
+offset_bottom = 931.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a54ma")
+
+[node name="SwipeLeft" type="Button" parent="CanvasLayer/Background/HowToPlayPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -62.5
+offset_right = 107.0
+offset_bottom = 62.5
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckhov")
+theme_override_styles/hover = SubResource("StyleBoxTexture_txxbo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xo84i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_phf1u")
+disabled = true
+icon = ExtResource("14_7pcvw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SwipeRight" type="Button" parent="CanvasLayer/Background/HowToPlayPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -62.5
+offset_right = 18.0
+offset_bottom = 62.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ckhov")
+theme_override_styles/hover = SubResource("StyleBoxTexture_txxbo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xo84i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_phf1u")
+icon = ExtResource("13_1c4bs")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Mort" type="AnimatedSprite2D" parent="CanvasLayer/Background/HowToPlayPanel"]
+position = Vector2(144.44, 183.643)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_qku5c")
+animation = &"mort"
+autoplay = "mort"
+offset = Vector2(37, 15)
+
+[node name="Kuro" type="AnimatedSprite2D" parent="CanvasLayer/Background/HowToPlayPanel"]
+position = Vector2(144.44, 183.643)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_pncxt")
+animation = &"kuro"
+autoplay = "kuro"
+offset = Vector2(70, 15)
+flip_h = true
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Background/HowToPlayPanel"]
+custom_minimum_size = Vector2(384, 216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -235.5
+offset_right = 295.5
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+autoplay = true
+expand = true
+loop = true
+
+[node name="InstructionsLabel" type="RichTextLabel" parent="CanvasLayer/Background/HowToPlayPanel"]
+custom_minimum_size = Vector2(925, 150)
+layout_mode = 2
+offset_left = 179.0
+offset_top = 542.5
+offset_right = 1104.0
+offset_bottom = 692.5
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("8_5p7uj")
+theme_override_font_sizes/normal_font_size = 42
+text = "Game instructions"
+
+[node name="HowToPlayOkButton" type="Button" parent="CanvasLayer/Background/HowToPlayPanel"]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -92.0
+offset_right = 100.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 3.0
+focus_mode = 0
+theme = ExtResource("9_2dugg")
+text = "OK"
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1530.0
+offset_top = 119.0
+offset_right = 1859.0
+offset_bottom = 388.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="MenuReturnButton" type="Button" parent="CanvasLayer/Background/Menu"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("9_2dugg")
+text = "Return to Menu"
+
+[node name="HowToPlayButton" type="Button" parent="CanvasLayer/Background/Menu"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("9_2dugg")
+text = "How to Play"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/Background/Menu"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("9_2dugg")
+text = "Settings"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/Background"]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 10.0
+offset_right = 1900.0
+offset_bottom = 110.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cd463")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4vtfm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_eswkl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_smyvj")
+text = "
+"
+icon = ExtResource("13_vnuw1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HelpButton" type="Button" parent="CanvasLayer/Background"]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 949.0
+offset_right = 1900.0
+offset_bottom = 1049.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_colors/font_hover_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_colors/font_pressed_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_colors/font_focus_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_colors/font_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_fonts/font = ExtResource("8_ur06k")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cd463")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tti5m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pthmm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rckm7")
+text = "?"
+
+[node name="HelpBanner" type="PanelContainer" parent="CanvasLayer/Background"]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 949.0
+offset_right = 1764.0
+offset_bottom = 1049.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3h5sn")
+
+[node name="HelpText" type="RichTextLabel" parent="CanvasLayer/Background/HelpBanner"]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.396078, 0.396078, 0.396078, 1)
+theme_override_fonts/normal_font = ExtResource("8_5p7uj")
+theme_override_font_sizes/normal_font_size = 40
+text = "Click to place pasture tile in highlighted area. Right click or press [R] to rotate."
+scroll_active = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(958.001, 541)
+scale = Vector2(1.25261, 1.05664)
+texture = ExtResource("16_wo6kj")
+
+[node name="Banners" type="CanvasLayer" parent="."]
+
+[node name="Player1Won" parent="Banners" instance=ExtResource("16_rap66")]
+visible = false
+
+[node name="Player2Won" parent="Banners" instance=ExtResource("17_d715m")]
+visible = false
+
+[node name="YouTied" parent="Banners" instance=ExtResource("17_1qg5x")]
+visible = false
+
+[node name="Player1WonTop" parent="Banners" instance=ExtResource("18_d1nu7")]
+visible = false
+
+[node name="Player2WonTop" parent="Banners" instance=ExtResource("19_xdswk")]
+visible = false
+
+[node name="YouTiedTop" parent="Banners" instance=ExtResource("15_pvw76")]
+visible = false
+
+[node name="Player1Turn" parent="Banners" instance=ExtResource("21_5hrpe")]
+visible = false
+
+[node name="Player2Turn" parent="Banners" instance=ExtResource("22_up0bk")]
+visible = false
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("23_yyt4k")
+autoplay = true
+bus = &"music"
+parameters/looping = true
+
+[node name="WinJingle" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("24_5lv6q")
+bus = &"music"
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("25_tsyek")
+bus = &"music"
+
+[node name="LoseJingle" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("26_mehfw")
+bus = &"music"
+
+[node name="LoseMusic" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("27_ucdfl")
+bus = &"music"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("28_ib2lj")
+volume_db = -1.0
+bus = &"sfx"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("29_f407n")
+volume_db = 2.0
+bus = &"sfx"
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("30_kx2dj")
+volume_db = 4.0
+bus = &"sfx"
+
+[node name="LoadingScreenLayer" type="CanvasLayer" parent="."]
+
+[node name="LoadingScreen" parent="LoadingScreenLayer" instance=ExtResource("35_2w2b8")]
+
+[connection signal="gui_input" from="CanvasLayer/Background/ScreenDimmer" to="HexGrid" method="_on_screen_dimmer_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/SettingsPanel/SettingsBox/MusicVolumeSlider" to="HexGrid" method="_on_music_volume_slider_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/Background/SettingsPanel/SettingsBox/MusicVolumeSlider" to="HexGrid" method="_on_music_volume_slider_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/SettingsPanel/SettingsBox/SfxVolumeSlider" to="HexGrid" method="_on_sfx_volume_slider_mouse_entered"]
+[connection signal="value_changed" from="CanvasLayer/Background/SettingsPanel/SettingsBox/SfxVolumeSlider" to="HexGrid" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/SettingsPanel/SettingsBox/SettingsOkButton" to="HexGrid" method="_on_settings_ok_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/SettingsPanel/SettingsBox/SettingsOkButton" to="HexGrid" method="_on_settings_ok_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/HowToPlayPanel/SwipeLeft" to="HexGrid" method="_on_swipe_left_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/HowToPlayPanel/SwipeLeft" to="HexGrid" method="_on_swipe_left_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/HowToPlayPanel/SwipeRight" to="HexGrid" method="_on_swipe_right_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/HowToPlayPanel/SwipeRight" to="HexGrid" method="_on_swipe_right_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/HowToPlayPanel/HowToPlayOkButton" to="HexGrid" method="_on_how_to_play_ok_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/HowToPlayPanel/HowToPlayOkButton" to="HexGrid" method="_on_how_to_play_ok_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/Menu/MenuReturnButton" to="HexGrid" method="_on_menu_return_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/Menu/MenuReturnButton" to="HexGrid" method="_on_menu_return_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/Menu/HowToPlayButton" to="HexGrid" method="_on_how_to_play_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/Menu/HowToPlayButton" to="HexGrid" method="_on_how_to_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/Menu/SettingsButton" to="HexGrid" method="_on_settings_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/Menu/SettingsButton" to="HexGrid" method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/MenuButton" to="HexGrid" method="_on_menu_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/MenuButton" to="HexGrid" method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Background/HelpButton" to="HexGrid" method="_on_help_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Background/HelpButton" to="HexGrid" method="_on_help_button_pressed"]
+[connection signal="finished" from="Sound/WinJingle" to="HexGrid" method="_on_win_jingle_finished"]
+[connection signal="finished" from="Sound/LoseJingle" to="HexGrid" method="_on_lose_jingle_finished"]

@@ -1,0 +1,315 @@
+[gd_scene load_steps=35 format=3 uid="uid://7ol3ypq5ipap"]
+
+[ext_resource type="Texture2D" uid="uid://bd1ea376omvbj" path="res://assets/Dino Duel Text.png" id="1_0h3rr"]
+[ext_resource type="Texture2D" uid="uid://cw7dk0h1agycj" path="res://assets/dinosaurs/female/nico/base/move.png" id="2_qrw1j"]
+[ext_resource type="Texture2D" uid="uid://bmp7pkerucd2h" path="res://assets/dinosaurs/female/mort/base/kick.png" id="3_a2ojd"]
+[ext_resource type="Texture2D" uid="uid://dbqpawrn1cbun" path="res://assets/dinosaurs/male/olaf/base/idle.png" id="4_3o3hy"]
+[ext_resource type="Texture2D" uid="uid://bu6i8dt3foax1" path="res://assets/dinosaurs/male/loki/base/jump.png" id="5_hc3gf"]
+[ext_resource type="Texture2D" uid="uid://tqgrryqpyttk" path="res://assets/ui/logo_pics/Dino Duel D (2).png" id="6_t50tu"]
+[ext_resource type="Texture2D" uid="uid://oi3ippo0ih6i" path="res://assets/ui/logo_pics/Dino Duel I.png" id="7_x34h0"]
+[ext_resource type="Texture2D" uid="uid://dr7o7ewj8yk1d" path="res://assets/ui/logo_pics/Dino Duel N.png" id="8_rxm70"]
+[ext_resource type="Texture2D" uid="uid://fc7br3ci0x4b" path="res://assets/ui/logo_pics/Dino Duel O.png" id="9_4s2wk"]
+[ext_resource type="Texture2D" uid="uid://bwhr6qv51eyo" path="res://assets/ui/logo_pics/Dino Duel U.png" id="10_rrbti"]
+[ext_resource type="Texture2D" uid="uid://dp253vrgjnhe8" path="res://assets/ui/logo_pics/Dino Duel E.png" id="11_4rj5y"]
+[ext_resource type="Texture2D" uid="uid://1vckyksq8w5c" path="res://assets/ui/logo_pics/Dino Duel L.png" id="12_2i5l2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juuvh"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o8xi"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6053"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl1f4"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upyyu"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxhlc"]
+atlas = ExtResource("2_qrw1j")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqxdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juuvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o8xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6053")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl1f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upyyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxhlc")
+}],
+"loop": true,
+"name": &"Niko Run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vev5v"]
+atlas = ExtResource("3_a2ojd")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5la0"]
+atlas = ExtResource("3_a2ojd")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bui7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vev5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5la0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vf6g"]
+atlas = ExtResource("4_3o3hy")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt34k"]
+atlas = ExtResource("4_3o3hy")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ntdt"]
+atlas = ExtResource("4_3o3hy")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0v6ef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vf6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt34k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ntdt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18t2a"]
+atlas = ExtResource("5_hc3gf")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3mqm"]
+atlas = ExtResource("5_hc3gf")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoge0"]
+atlas = ExtResource("5_hc3gf")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rj4s"]
+atlas = ExtResource("5_hc3gf")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjbjq"]
+animations = [{
+"frames": [{
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_18t2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3mqm")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_xoge0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rj4s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_v3uja"]
+resource_name = "Niko_Walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Niko(F):position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152.801, -52.6786), Vector2(-117.148, -53.5714), Vector2(-153.65, -53.5714)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Niko(F):flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_nfpnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Niko(F):position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-154.075, -48.2143)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Niko(F):flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvs45"]
+_data = {
+"Niko_Walk": SubResource("Animation_v3uja"),
+"RESET": SubResource("Animation_nfpnk")
+}
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(305, 287)
+scale = Vector2(1.178, 1.12)
+texture = ExtResource("1_0h3rr")
+
+[node name="Niko(F)" type="AnimatedSprite2D" parent="."]
+position = Vector2(-154.075, -48.2143)
+scale = Vector2(2, 1.832)
+sprite_frames = SubResource("SpriteFrames_hqxdp")
+animation = &"Niko Run"
+autoplay = "Niko Run"
+frame_progress = 0.682398
+speed_scale = 2.0
+
+[node name="Mort(F)" type="AnimatedSprite2D" parent="."]
+position = Vector2(73.854, -71.4286)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bui7a")
+autoplay = "default"
+frame_progress = 0.468818
+speed_scale = 0.25
+
+[node name="Olaf(M)" type="AnimatedSprite2D" parent="."]
+position = Vector2(-30.5603, -55.3571)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0v6ef")
+autoplay = "default"
+frame_progress = 0.70238
+flip_h = true
+
+[node name="Loki(M)" type="AnimatedSprite2D" parent="."]
+position = Vector2(206.282, -57.1429)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wjbjq")
+autoplay = "default"
+frame_progress = 0.953832
+speed_scale = 0.5
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_pvs45")
+}
+autoplay = "Niko_Walk"
+speed_scale = 1.777
+movie_quit_on_finish = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-518.317, -106.024)
+
+[node name="D1" type="Sprite2D" parent="Node2D"]
+position = Vector2(321.373, 85.4878)
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("6_t50tu")
+
+[node name="I" type="Sprite2D" parent="Node2D"]
+position = Vector2(382.494, 96.2021)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("7_x34h0")
+
+[node name="N" type="Sprite2D" parent="Node2D"]
+position = Vector2(436.823, 96.2021)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("8_rxm70")
+
+[node name="O" type="Sprite2D" parent="Node2D"]
+position = Vector2(493.699, 97.9878)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("9_4s2wk")
+
+[node name="D" type="Sprite2D" parent="Node2D"]
+position = Vector2(565.856, 88.1664)
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("6_t50tu")
+
+[node name="U" type="Sprite2D" parent="Node2D"]
+position = Vector2(626.127, 95.3092)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("10_rrbti")
+
+[node name="E" type="Sprite2D" parent="Node2D"]
+position = Vector2(683.003, 94.4164)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("11_4rj5y")
+
+[node name="L" type="Sprite2D" parent="Node2D"]
+position = Vector2(739.031, 96.2021)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("12_2i5l2")

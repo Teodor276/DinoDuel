@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://kyeqkqf2pxoe"]
+
+[ext_resource type="Texture2D" uid="uid://bvvh2jyw8f7q3" path="res://assets/dinosaurs/male/loki/base/move.png" id="1_wgnka"]
+[ext_resource type="Texture2D" uid="uid://cw7dk0h1agycj" path="res://assets/dinosaurs/female/nico/base/move.png" id="2_66etf"]
+[ext_resource type="Texture2D" uid="uid://n6qorw16u1xe" path="res://assets/dinosaurs/female/olaf/base/idle.png" id="3_bjktl"]
+[ext_resource type="Texture2D" uid="uid://duudytkc0e2ce" path="res://assets/dinosaurs/female/mort/base/dash.png" id="4_511u1"]
+[ext_resource type="Texture2D" uid="uid://bd1ea376omvbj" path="res://assets/Dino Duel Text.png" id="5_8f5h2"]
+
+[node name="Logo" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(515, 142)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(91, -169)
+scale = Vector2(2.04545, 1.875)
+texture = ExtResource("1_wgnka")
+region_enabled = true
+region_rect = Rect2(49.2514, 0, 22.7486, 24)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(211, -159)
+scale = Vector2(2.38462, 2.5)
+texture = ExtResource("2_66etf")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(97.3983, 2.72401, 21.6436, 22.3061)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-13.25, -156.25)
+scale = Vector2(2.27083, 2.3125)
+texture = ExtResource("3_bjktl")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 24.0741, 24)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-120, -151)
+scale = Vector2(2.22727, 2.54167)
+texture = ExtResource("4_511u1")
+region_enabled = true
+region_rect = Rect2(51.2615, 0, 22.0853, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(537, 44)
+texture = ExtResource("5_8f5h2")
