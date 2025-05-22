@@ -1,8 +1,14 @@
 # capstone-team-4
 
 ## Dino Duel
-This application implements the Battle Sheep board game in the Godot game engine. 
-Users can choose to play against friends on their local machine or over a network, or against several levels of AI.
+
+This application implements the Battle Sheep board game, developed using the Godot game engine. It provides users with the option to play locally against friends on the same machine, connect over a local network (LAN), or compete against AI at various difficulty levels. For network play, both machines must be connected to the same local area network (LAN) and share the same network configuration to ensure compatibility.
+
+This project was completed as part of the Capstone course at Harding University in Searcy, Arkansas, USA.
+
+### Download
+[Click here to download the Dino Duel game installer](https://www.dropbox.com/scl/fi/lwg6dwpsqz3q77ls9lmtc/dinoduel_Installer.exe?rlkey=pnb8928rqiib9y34i1wjq01gy&st=1oe7p7w5&dl=1)
+
 
 ## Developers
 - Garret Gill: networking lead
