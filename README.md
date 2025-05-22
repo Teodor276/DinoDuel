@@ -7,7 +7,7 @@ This application implements the Battle Sheep board game, developed using the God
 This project was completed as part of the Capstone course at Harding University in Searcy, Arkansas, USA.
 
 ### Download
-[Click here to download the Dino Duel game installer](https://www.dropbox.com/scl/fi/lwg6dwpsqz3q77ls9lmtc/dinoduel_Installer.exe?rlkey=pnb8928rqiib9y34i1wjq01gy&st=1oe7p7w5&dl=1)
+[Click here to download the Dino Duel game installer for Windows](https://www.dropbox.com/scl/fi/lwg6dwpsqz3q77ls9lmtc/dinoduel_Installer.exe?rlkey=pnb8928rqiib9y34i1wjq01gy&st=1oe7p7w5&dl=1)
 
 
 ## Developers
